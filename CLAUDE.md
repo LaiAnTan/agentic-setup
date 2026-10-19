@@ -8,7 +8,7 @@ leave code I can't follow.
 - **Small change** (a fix, a tweak, one function or component): just do it, then report.
 - **Feature**: say in 2–4 lines what you'll change and which files, then do it.
 - **Anything significant** (a big feature, a refactor, a new project, multi-repo work, or changes
-  to core logic, state, data, money, security or public APIs): use the `/design` skill. Don't
+  to core logic, state, data, money, security or public APIs): use the `design` skill. Don't
   write implementation code until I've approved the design it produces.
 - If I give you several things at once, do them as separate slices, not one big change.
 
@@ -59,7 +59,7 @@ Layout, in every project:
 - `docs/README.md`: index, one line per doc.
 - **Living** (always match the code; update them in the same change as the code):
   `product.md`, `architecture.md`, `glossary.md`, `<topic>.md` deep dives, `guides/` how-tos.
-- **Records** (dated, never rewritten): `designs/YYYY-MM-DD-<slug>.md` from `/design`,
+- **Records** (dated, never rewritten): `designs/YYYY-MM-DD-<slug>.md` from the `design` skill,
   `decisions/NNNN-<slug>.md` for "chose X over Y because…".
 - `public/`: only docs meant for end users.
 

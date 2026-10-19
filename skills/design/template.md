@@ -2,7 +2,7 @@
 
 One file per piece of work. Fill in only the stages being run; delete the rest.
 Keep each section short; diagrams over paragraphs. This file is a working record: code
-pointers are fine here, but the living docs it folds into follow the CLAUDE.md writing rules.
+pointers are fine here, but the living docs it folds into follow the global rules' docs writing rules.
 
 ```markdown
 # <Feature or project name>: design

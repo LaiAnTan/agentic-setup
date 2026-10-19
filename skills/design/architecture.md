@@ -12,7 +12,7 @@ Draft:
 - **Constraints**: performance targets, cost or quota limits, security and privacy,
   hosting, compatibility, deadlines.
 - **Tech choices**: only where a new choice is needed. Give concrete options with research
-  and sources, then a recommendation (per CLAUDE.md).
+  and sources, then a recommendation (per the global rules).
 - **Risks**: what's most likely to go wrong or be hard to change later.
 
 Diagrams: a component diagram (who calls whom) and, if there's real data, an ER diagram.

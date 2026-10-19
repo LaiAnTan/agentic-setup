@@ -1,7 +1,8 @@
 # agentic-setup
 
-My Claude Code setup for building fast with agents while keeping the code good and
-maintainable: a global `CLAUDE.md` and a `/design` skill.
+My coding-agent setup for building fast with agents while keeping the code good and
+maintainable: global rules and a `design` skill. Works with Claude Code, Codex, Gemini CLI /
+Antigravity, and anything else that reads `AGENTS.md` or Agent Skills.
 
 Based on Dex Horthy's talk [Why Software Factories Fail](https://www.ai.engineer/talks/Ib5GBkD555M-harness-engineering-is-not-enough-why-software)
 (agree on the design before code exists, keep reading the code) and ideas from
@@ -11,6 +12,7 @@ Based on Dex Horthy's talk [Why Software Factories Fail](https://www.ai.engineer
 
 ```
 CLAUDE.md                 global rules, loaded in every session
+AGENTS.md                 symlink to CLAUDE.md, for agents that read AGENTS.md
 skills/design/
   SKILL.md                the /design process: size the work, run stages, stop for review
   product.md              stage: problem, users, behaviour, out of scope
@@ -38,9 +40,23 @@ Each stage in `/design` is drafted by the agent and approved by me before the ne
 ./install.sh
 ```
 
-This symlinks `CLAUDE.md` to `~/.claude/CLAUDE.md` and `skills/design` to
-`~/.claude/skills/design`, so editing files here updates the setup straight away.
-Anything already at those paths is moved aside with a `.bak` suffix first.
+This symlinks the rules and every skill in `skills/` into each agent's global config, so
+editing files here updates every agent straight away:
+
+| Agent | Rules | Skills |
+|---|---|---|
+| Claude Code | `~/.claude/CLAUDE.md` | `~/.claude/skills/` |
+| Codex | `~/.codex/AGENTS.md` | `~/.codex/skills/` |
+| Gemini CLI / Antigravity | `~/.gemini/GEMINI.md` | `~/.gemini/skills/` |
+
+Claude Code is always set up; the others only if their config folder already exists.
+Anything already at those paths is moved aside with a `.bak` suffix first. Re-running is safe.
+
+Cursor has no global rules file: paste `CLAUDE.md` into Settings → Rules → User Rules, or
+symlink `AGENTS.md` into a project's root.
+
+Using it in your own setup: fork it, then rewrite `CLAUDE.md` for how *you* work. The rules
+here came from reviewing my own sessions, so they won't all fit you.
 
 ## Changing it
 

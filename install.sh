@@ -1,13 +1,14 @@
 #!/usr/bin/env bash
-# Symlink this repo's setup into ~/.claude, backing up anything already there.
+# Symlink this repo's rules and skills into each coding agent's global config,
+# backing up anything already there. Claude Code is always set up; other agents
+# only if their config folder already exists.
 set -euo pipefail
 
 repo="$(cd "$(dirname "$0")" && pwd)"
-claude="$HOME/.claude"
-mkdir -p "$claude/skills"
 
 link() {
   local src="$1" dest="$2"
+  mkdir -p "$(dirname "$dest")"
   if [ -L "$dest" ] && [ "$(readlink "$dest")" = "$src" ]; then
     echo "ok       $dest"
     return
@@ -20,5 +21,23 @@ link() {
   echo "linked   $dest -> $src"
 }
 
-link "$repo/CLAUDE.md" "$claude/CLAUDE.md"
-link "$repo/skills/design" "$claude/skills/design"
+# agent config dir | global rules file name
+agents=(
+  "$HOME/.claude|CLAUDE.md"
+  "$HOME/.codex|AGENTS.md"
+  "$HOME/.gemini|GEMINI.md"
+)
+
+for entry in "${agents[@]}"; do
+  dir="${entry%%|*}"
+  rules="${entry##*|}"
+  if [ "$dir" != "$HOME/.claude" ] && [ ! -d "$dir" ]; then
+    echo "skip     $dir (not installed)"
+    continue
+  fi
+  link "$repo/CLAUDE.md" "$dir/$rules"
+  for skill in "$repo"/skills/*/; do
+    name="$(basename "$skill")"
+    link "$repo/skills/$name" "$dir/skills/$name"
+  done
+done
