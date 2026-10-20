@@ -20,6 +20,7 @@ leave code I can't follow.
   concrete options (named tools/versions or specific designs), each with its trade-offs, what
   it would mean in my project, and links to the sources. Say which one you'd pick and why.
   Don't pad the list with options you wouldn't seriously consider.
+- When I want to brainstorm, or the problem itself is still fuzzy, use the `brainstorm` skill.
 - For big or uncertain changes, prototype first and keep it easy to revert.
 
 ## Taste
@@ -48,7 +49,10 @@ leave code I can't follow.
 
 ## Explaining
 - Prefer a diagram over a wall of text: flows, architecture, data models, state machines,
-  before/after. Use Mermaid or an image, plus a few lines of text for what the diagram can't say.
+  before/after, plus a few lines of text for what the diagram can't say.
+- In chat, show diagrams as an artifact (Claude's artifact tool), never as a Mermaid code block.
+  Agents without an artifact tool write a self-contained HTML page and open it. Mermaid is for
+  markdown files only (docs, design records), where it renders.
 - Lead with the answer; keep prose short and skimmable.
 
 ## Reporting back

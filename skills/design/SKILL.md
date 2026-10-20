@@ -37,8 +37,10 @@ stage file below (in this skill's folder):
 
 Then:
 
-**a. Clarify first.** Before drafting, tell the user in a few lines what you understand this
-stage has to decide, list your assumptions, and ask whether anything needs clarifying (use
+**a. Clarify first.** If a brainstorm brief (`docs/designs/*-brief.md`) exists for this work,
+start from it and don't re-ask what it settled. If there's none and the problem itself is still
+fuzzy, suggest running the `brainstorm` skill first. Before drafting, tell the user in a few
+lines what you understand this stage has to decide, list your assumptions, and ask whether anything needs clarifying (use
 AskUserQuestion, if your agent has it, for concrete choices). Wait for their answer before drafting.
 
 **b. Draft two versions, then stop:**
