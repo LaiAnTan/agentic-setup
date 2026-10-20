@@ -28,19 +28,38 @@ options with sources. Don't design from assumptions.
 ## 3. Run each stage
 Create the design file `docs/designs/YYYY-MM-DD-<slug>.md` from `template.md` (set up the
 `docs/` layout from the global rules first if the repo doesn't have it). For each stage, read its
-stage file below (in this skill's folder), draft that section of the design file, then **stop**:
+stage file below (in this skill's folder):
 
 - `product.md`: problem, users, behaviour, out of scope
 - `architecture.md`: components, contracts, data model, constraints
 - `program-design.md`: types, signatures, file layout, call flow
 - `slices.md`: build order, repos, PRs, and the check for each slice
 
-When stopping, show the user:
-- a diagram where it helps, plus a short summary (not the whole doc pasted in chat)
-- the decisions you made and the open questions, numbered so they can answer "2: yes"
+Then:
 
-Do not start the next stage until the user approves this one. If they change something,
-update the design file, not just the chat.
+**a. Clarify first.** Before drafting, tell the user in a few lines what you understand this
+stage has to decide, list your assumptions, and ask whether anything needs clarifying (use
+AskUserQuestion, if your agent has it, for concrete choices). Wait for their answer before drafting.
+
+**b. Draft two versions, then stop:**
+- **Markdown**: that stage's section of the design file. The technical record: exact names,
+  signatures, Mermaid diagrams.
+- **Artifact**: the same stage for someone who hasn't seen the code, with Mermaid diagrams that
+  render. Use the session's artifact tool if it has one; otherwise write a self-contained HTML
+  file next to the design file (`YYYY-MM-DD-<slug>-<stage>.html`, Mermaid loaded from
+  cdn.jsdelivr.net) and open it for the user.
+
+Writing rules for the artifact: short sentences, no file paths, function names or table names.
+Replace technical terms with plain words, or explain them in a few words the first time. Order:
+1. What changes for the people who use it.
+2. How it works: one to three diagrams, with a sentence before each saying what it shows; at
+   most five boxes and one idea per diagram.
+3. What could go wrong.
+4. Decisions and open questions, numbered, each with your recommended answer.
+
+**When stopping**, link both versions and repeat the numbered questions in chat, so the user
+can answer "2: yes". Do not start the next stage until the user approves this one. If they
+change something, update both versions, not just the chat.
 
 ## 4. Build slice by slice
 After the slice plan is approved:

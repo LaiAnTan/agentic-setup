@@ -17,6 +17,9 @@ Draft:
 
 Keep it to what a reviewer needs to recognise the code later. Don't write implementations.
 
+In the artifact, don't show signatures. Show two pictures instead: "reused / new / deleted" and
+"what happens step by step" for the main flow, then errors in plain words.
+
 For refactors: show before and after for the layout and call flow, and state what behaviour
 must stay exactly the same and how that will be checked.
 
