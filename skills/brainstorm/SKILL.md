@@ -14,9 +14,11 @@ Work in the repo's `docs/designs/` (or the current folder if there's no repo yet
 - `YYYY-MM-DD-<slug>-brainstorm.md`: the running log, from `log-template.md`.
 - `YYYY-MM-DD-<slug>-brief.md`: the decision brief, from `brief-template.md`, written on "lock it".
 
-Show everything visual in **one brainstorm artifact** (Claude's artifact tool) that you update
-each round: the current options as cards with a small diagram each, then where we're leaning.
-Agents without an artifact tool write a self-contained HTML page next to the log and open it.
+Show everything visual in **one brainstorm artifact** (Claude's artifact tool): the options as
+cards with a small diagram each, then the current leaning. Update it only when the user asks to
+see it or on "lock it"; each round, update the log alone. Never keep the same content in more
+than one doc. Agents without an artifact tool write a self-contained HTML page next to the log
+and open it.
 No Mermaid code blocks in chat.
 
 ## 1. Frame
@@ -47,9 +49,10 @@ If they're still unsure between options, go to step 4 rather than debating.
 
 ## 4. Test cheaply
 When a question can be answered by trying, try instead of arguing: a throwaway prototype, a
-quick calculation, a small benchmark, or reading how a real project did it. Keep tests in a
-scratch folder or branch, delete them afterwards, and record only the result in the log.
-Show the evidence (screenshot, numbers, output).
+quick calculation, a small benchmark, or reading how a real project did it. Tests live in
+`/tmp/<slug>/`, never inside the repo, and are deleted afterwards with only the result logged.
+A test likely to run longer than about 10 minutes goes in its own session, not a background
+subagent (subagents die with the session). Show the evidence (screenshot, numbers, output).
 
 ## 5. Log every round
 Update the log after every round: options considered, what was rejected and **why**, test
