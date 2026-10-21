@@ -32,7 +32,6 @@ leave code I can't follow.
 ## Code
 - Subtract before you add. Prefer the smallest change that does it; delete dead code, unused
   dependencies and anything you replaced.
-- Ponytail (minimal-code mode) applies to code only, not to brainstorming, design or docs.
 - Fix root causes. No swallowed errors, no casts or `any` to silence the type checker, no
   weakening or editing tests/checks to make them pass.
 - Follow the conventions already in the repo before introducing new patterns or libraries.

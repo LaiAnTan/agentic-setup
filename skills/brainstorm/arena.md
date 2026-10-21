@@ -29,5 +29,6 @@ frame and the three results, not the chat history. It:
 - proposes one or two merged options that take the best parts.
 
 ## Report
-Update the brainstorm artifact with the contenders side by side and the judge's merged
-options, add the results to the log, then go back to "React and push back" with the user.
+Add the contenders side by side and the judge's merged options to the log (update the
+brainstorm artifact only if the user asks to see it), then go back to "React and push back"
+with the user.
