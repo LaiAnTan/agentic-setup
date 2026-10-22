@@ -8,6 +8,7 @@ pointers are fine here, but the living docs it folds into follow the global rule
 # <Feature or project name>: design
 
 Status: product ⏳ · architecture ⏳ · program design ⏳ · slices ⏳ · done ⏳
+
 Started: <date> · Last updated: <date>
 
 ## Product
@@ -18,13 +19,19 @@ Started: <date> · Last updated: <date>
 **Out of scope:**
 
 ## Architecture
+**Terms:**
+- <project name>: <what it is, in plain words>
+
 <component diagram>
 
 | Component | Owns | Talks to |
 |---|---|---|
 
 **Contracts:**
-**Data model:**
+**Data:**
+**Jobs:**
+**Invariants:** (rule → who enforces it)
+**Failures:** (dependency → what happens → how we recover)
 **Constraints:**
 **Decisions:** (each: choice, options considered, why, source links; significant ones
 become `docs/decisions/` notes when the design is done)

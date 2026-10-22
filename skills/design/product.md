@@ -2,7 +2,8 @@
 
 Goal: agree on *what* we're building and *why* before anyone thinks about *how*.
 
-Draft, in plain language:
+Draft in plain words: short sentences, no technical terms, file paths, function or table names.
+Write it so someone who has never seen the code can follow it.
 - **Problem**: what's wrong or missing today, and for whom. 2–3 sentences.
 - **Users and main flows**: who uses it and the 2–5 things they do, step by step.
 - **Behaviour**: what should happen, including edge cases and failure cases

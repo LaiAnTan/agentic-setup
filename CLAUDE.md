@@ -36,6 +36,8 @@ leave code I can't follow.
   weakening or editing tests/checks to make them pass.
 - Follow the conventions already in the repo before introducing new patterns or libraries.
 - Tunable numbers (thresholds, timings, odds, sizes) live in one named config, not scattered.
+- If `grep` here is ugrep (`grep --version`), `-o` with a long `{0,N}` context hits its
+  regex complexity limit and fails. Use `rg` or Python for that instead.
 
 ## Proving it works
 - Run the project's typecheck/lint/tests/build before saying you're done.
