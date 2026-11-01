@@ -1,7 +1,7 @@
 # agentic-setup
 
 My coding-agent setup for building fast with agents while keeping the code good and
-maintainable: global rules plus `brainstorm`, `feature-design` and `wayfinder` skills. Works with Claude Code,
+maintainable: global rules plus `brainstorm`, `feature-design`, `wayfinder` and `ui-design` skills. Works with Claude Code,
 Codex, Gemini CLI / Antigravity, and anything else that reads `AGENTS.md` or Agent Skills.
 
 ## Why this exists
@@ -40,6 +40,8 @@ flowchart LR
   W -- route clear --> D
   D --> S[Build slice by slice]
   S --> F[Fold into living docs]
+  Z -- how it looks --> U[ui-design on a canvas]
+  U -- approved --> S
 ```
 
 The amount of process grows with the risk. A one-line fix stays fast; a new system gets
@@ -69,6 +71,9 @@ skills/wayfinder/
   SKILL.md                    map of decision tickets on GitHub Issues, one per session
   LICENSE                     MIT, from Matt Pocock's original
   agents/openai.yaml          tells Codex it's user-invoked only
+skills/ui-design/
+  SKILL.md                    mode, brief, direction, nine passes, mockups, check, build
+  slop.md                     signs of generated UI, each with its fix
 ```
 
 ## Why each part is the way it is
@@ -166,6 +171,28 @@ the destination, child issues each hold one question, and each session resolves 
 - **Hands off to `feature-design`.** Instead of Matt's to-spec and to-tickets, a cleared map feeds the
   feature-design skill, the same way a brainstorm brief does. Research and glossary terms follow the
   global rules instead of separate skills.
+
+### ui-design: how it looks, on a canvas
+
+Built from three skills: [impeccable](https://github.com/pbakaus/impeccable) (Paul Bakaus),
+[unslop](https://github.com/heydamir/unslop) (Damir Sokolovsky, CC BY 4.0) and
+[Stageshow](https://github.com/benjitaylor/skills) (Benji Taylor). Agents left alone produce
+the same UI every time: purple gradients, glows, emoji, a centered hero any product could have.
+
+- **Always on a Claude artifact design canvas.** Directions sit side by side, desktop next to
+  phone, states in a row, so I can compare and pick instead of reading a description. Code
+  comes only after I approve the canvas, and the canvas is the spec for it.
+- **Mode first** (impeccable): a landing page, an app screen and a docs page succeed in
+  different ways, so they get different amounts of boldness.
+- **Direction from the product, not trends** (unslop): product, character, world, moments,
+  signature. Three directions plus the plain category standard, and it names the looks
+  generated UI always lands on so it can avoid them.
+- **Nine passes in order** (unslop): spacing, color, icons, copy, type, layout, details,
+  visuals, motion. Each changes how the next reads.
+- **Mockups that read as real products** (Stageshow): few real words, a crop with intent, one
+  focal object, a first frame that tells the story.
+- **It looks at its own work.** The canvas tells agents not to check unless asked; this skill
+  asks, because my rules say nothing is done until it's been seen.
 
 ### install.sh and AGENTS.md: one source for every agent
 

@@ -11,6 +11,8 @@ leave code I can't follow.
   to core logic, state, data, money, security or public APIs): use the `feature-design` skill. Don't
   write implementation code until I've approved the design it produces.
 - **Too big for one session, with the route unclear**: suggest `/wayfinder` (I start it myself).
+- **How it looks** (a screen, page, component, mockup): use the `ui-design` skill, on a canvas,
+  before any UI code.
 - If I give you several things at once, do them as separate slices, not one big change.
 
 ## When I'm vague
