@@ -1,6 +1,6 @@
 ---
 name: brainstorm
-description: Brainstorm hard until the idea is right. Use when the user wants to brainstorm, explore options, or is still unsure what to build or how. Loops through researched options, push-back and quick tests, keeps a running log, can "go wide" with several competing agents, and ends with a decision brief that the design skill starts from.
+description: Brainstorm hard until the idea is right. Use when the user wants to brainstorm, explore options, or is still unsure what to build or how. Loops through researched options, push-back and quick tests, keeps a running log, can "go wide" with several competing agents, and ends with a decision brief that the feature-design skill starts from.
 ---
 
 # Brainstorm until it's right
@@ -69,5 +69,5 @@ a yes) when about three rounds have passed without the options narrowing.
 Only when the user says "lock it" (or clearly approves a final direction):
 - write the decision brief from `brief-template.md`;
 - update the artifact to show the final direction;
-- offer to start the `design` skill from the brief, telling the user which design stages the
+- offer to start the `feature-design` skill from the brief, telling the user which design stages the
   brief already covers.

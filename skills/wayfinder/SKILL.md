@@ -1,6 +1,6 @@
 ---
 name: wayfinder
-description: Plan an effort too big for one session, whose route is still unclear, as a map of decision tickets on GitHub Issues. Each session resolves one ticket until nothing is left to decide, then hands off to the design skill. User-invoked only.
+description: Plan an effort too big for one session, whose route is still unclear, as a map of decision tickets on GitHub Issues. Each session resolves one ticket until nothing is left to decide, then hands off to the feature-design skill. User-invoked only.
 disable-model-invocation: true
 ---
 
@@ -8,7 +8,7 @@ disable-model-invocation: true
 
 Adapted from Matt Pocock's [wayfinder](https://github.com/mattpocock/skills) (MIT, see
 `LICENSE`). Use it when the work won't fit in one session *and* the way there isn't visible
-yet. If it fits in one session, use `brainstorm` or `design` instead.
+yet. If it fits in one session, use `brainstorm` or `feature-design` instead.
 
 The effort is charted as a **map**: one issue naming the **destination**, with child issues
 as **decision tickets**. Each ticket is a question whose answer is a decision. Sessions
@@ -97,7 +97,7 @@ The user brings a loose idea.
 2. **Sweep the frontier.** Breadth first, not deep on one thread: read the living docs and the
    code for the area, list the open decisions and what's takeable now. **If there's no fog**
    (it fits in one session and the route is clear), say so and suggest `brainstorm` or
-   `design` instead. Stop.
+   `feature-design` instead. Stop.
 3. **Create the map** with Destination, Notes and the fog filled in.
 4. **Create the tickets** you can state now, then wire blocking in a second pass (tickets need
    numbers before they can reference each other).
@@ -125,7 +125,7 @@ ticket that links the old one, and update the affected tickets.
 Other sessions may be working the map at the same time; re-read before editing the map body.
 
 ## When the map is clear
-No open tickets and no fog left: the route is clear. Offer to start the `design` skill from
+No open tickets and no fog left: the route is clear. Offer to start the `feature-design` skill from
 the map. Design reads the Destination and Decisions so far (and the tickets they link) the
 way it reads a brainstorm brief, and should say which stages the map already covers. Don't
 continue into code from here.

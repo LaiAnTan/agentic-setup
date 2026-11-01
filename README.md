@@ -1,7 +1,7 @@
 # agentic-setup
 
 My coding-agent setup for building fast with agents while keeping the code good and
-maintainable: global rules plus `brainstorm`, `design` and `wayfinder` skills. Works with Claude Code,
+maintainable: global rules plus `brainstorm`, `feature-design` and `wayfinder` skills. Works with Claude Code,
 Codex, Gemini CLI / Antigravity, and anything else that reads `AGENTS.md` or Agent Skills.
 
 ## Why this exists
@@ -34,7 +34,7 @@ flowchart LR
   T[Task] --> Z{How big?}
   Z -- small --> J[Just do it, show proof]
   Z -- fuzzy --> B[brainstorm]
-  B -- lock it --> D[design]
+  B -- lock it --> D[feature-design]
   Z -- significant --> D
   Z -- too big for one session --> W[wayfinder]
   W -- route clear --> D
@@ -56,7 +56,7 @@ skills/brainstorm/
   arena.md                    "go wide": competing agents plus a judge
   log-template.md             running log of ideas, rejects and tests
   brief-template.md           one-page decision brief that design starts from
-skills/design/
+skills/feature-design/
   SKILL.md                    size the work, run the stages, review, build, stop for approval
   product.md                  stage: problem, users, behaviour, out of scope
   architecture.md             stage: terms, components, contracts, data, jobs, invariants, failures
@@ -118,10 +118,10 @@ stalls the design, so they're separate skills.
   back. The log is the one place that remembers, and it's the only thing updated every round.
 - **Arena ("go wide").** Several agents each argue a different approach without seeing the
   others, so they don't all anchor on the first idea. A separate judge compares them.
-- **Lock it.** Ends with a one-page brief, so the design skill starts from what was settled
+- **Lock it.** Ends with a one-page brief, so the feature-design skill starts from what was settled
   instead of asking again.
 
-### design: agree before building
+### feature-design: agree before building
 
 The four stages come from the talk: **product → architecture → program design → vertical
 slices**, each drafted by the agent and approved by me before the next starts.
@@ -163,8 +163,8 @@ the destination, child issues each hold one question, and each session resolves 
 - **Bounded destinations and short questions.** Users of the original report maps going stale
   halfway through and grilling questions too long to keep up with.
 - **The user picks prototypes.** The original let an agent choose between its own variants.
-- **Hands off to `design`.** Instead of Matt's to-spec and to-tickets, a cleared map feeds the
-  design skill, the same way a brainstorm brief does. Research and glossary terms follow the
+- **Hands off to `feature-design`.** Instead of Matt's to-spec and to-tickets, a cleared map feeds the
+  feature-design skill, the same way a brainstorm brief does. Research and glossary terms follow the
   global rules instead of separate skills.
 
 ### install.sh and AGENTS.md: one source for every agent
@@ -190,7 +190,7 @@ This symlinks the rules and every skill in `skills/` into each agent's global co
 Claude Code is always set up; the others only if their config folder already exists.
 Anything already at those paths is moved aside with a `.bak` suffix first. Re-running is safe.
 
-The design scripts need Python 3 and the `markdown` package (`python3 -m pip install markdown`).
+The feature-design scripts need Python 3 and the `markdown` package (`python3 -m pip install markdown`).
 
 Cursor has no global rules file: paste `CLAUDE.md` into Settings → Rules → User Rules, or
 symlink `AGENTS.md` into a project's root.

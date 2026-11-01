@@ -1,6 +1,6 @@
 # Template for docs/designs/YYYY-MM-DD-<slug>-brief.md
 
-One page. Written on "lock it". The design skill starts from this, so be specific.
+One page. Written on "lock it". The feature-design skill starts from this, so be specific.
 
 ```markdown
 # <Topic>: decision brief
@@ -23,7 +23,7 @@ Locked: <date> · Log: [brainstorm](YYYY-MM-DD-<slug>-brainstorm.md)
 ## Still open
 1. <question>: <recommended answer>
 
-## For the design skill
+## For the feature-design skill
 Stages this brief already covers: <product / parts of architecture / …>
 Start design at: <stage>
 ```

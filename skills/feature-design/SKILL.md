@@ -1,5 +1,5 @@
 ---
-name: design
+name: feature-design
 description: Design before building. Use for anything significant - a big feature, a refactor, a new project, multi-repo work, or changes to core logic, state, data, money, security or public APIs. Walks through product, architecture, program design and vertical slices, stopping for the user's approval at each stage, and records the design in docs/designs/.
 ---
 
