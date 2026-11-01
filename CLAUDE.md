@@ -31,6 +31,8 @@ leave code I can't follow.
 - Nothing should read as AI-generated: no generic template UI, filler copy, or boilerplate
   comments and docs that restate the code.
 - Keep what I last approved unless I ask; don't redesign around a small request.
+- Make the decision that improves all three: user experience (UX), developer experience (DX)
+  and agent experience (AX), without breaking anything.
 
 ## Code
 - Subtract before you add. Prefer the smallest change that does it; delete dead code, unused

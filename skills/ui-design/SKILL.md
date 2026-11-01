@@ -98,7 +98,8 @@ this order, because each one changes how the next reads:
    steps, not glows.
 3. **Icons**: one line set (the project's, else lucide), one size, one stroke, text colors.
    No emoji as icons.
-4. **Copy**: headlines say what it does for whom; no greetings, exclamation marks, hype words
+4. **Copy**: cut taglines, helper text and secondary labels; if a screen needs them to make
+   sense, fix the layout. Headlines say what it does for whom; no greetings, exclamation marks, hype words
    or unverifiable claims; changes say what they compare to; plausible data, never `123,456`.
 5. **Type**: one family plus at most one partner; two weights; hierarchy from size and color;
    sentence case; tabular numbers in one format.
