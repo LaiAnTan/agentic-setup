@@ -10,6 +10,7 @@ leave code I can't follow.
 - **Anything significant** (a big feature, a refactor, a new project, multi-repo work, or changes
   to core logic, state, data, money, security or public APIs): use the `design` skill. Don't
   write implementation code until I've approved the design it produces.
+- **Too big for one session, with the route unclear**: suggest `/wayfinder` (I start it myself).
 - If I give you several things at once, do them as separate slices, not one big change.
 
 ## When I'm vague

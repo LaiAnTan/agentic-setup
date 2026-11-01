@@ -1,7 +1,7 @@
 # agentic-setup
 
 My coding-agent setup for building fast with agents while keeping the code good and
-maintainable: global rules plus a `brainstorm` and a `design` skill. Works with Claude Code,
+maintainable: global rules plus `brainstorm`, `design` and `wayfinder` skills. Works with Claude Code,
 Codex, Gemini CLI / Antigravity, and anything else that reads `AGENTS.md` or Agent Skills.
 
 ## Why this exists
@@ -36,6 +36,8 @@ flowchart LR
   Z -- fuzzy --> B[brainstorm]
   B -- lock it --> D[design]
   Z -- significant --> D
+  Z -- too big for one session --> W[wayfinder]
+  W -- route clear --> D
   D --> S[Build slice by slice]
   S --> F[Fold into living docs]
 ```
@@ -63,6 +65,10 @@ skills/design/
   template.md                 skeleton for docs/designs/YYYY-MM-DD-<slug>.md
   scripts/build_artifact.py   builds one artifact page from a design markdown file
   scripts/preview.py          serves built pages for the local browser preview
+skills/wayfinder/
+  SKILL.md                    map of decision tickets on GitHub Issues, one per session
+  LICENSE                     MIT, from Matt Pocock's original
+  agents/openai.yaml          tells Codex it's user-invoked only
 ```
 
 ## Why each part is the way it is
@@ -141,6 +147,26 @@ slices**, each drafted by the agent and approved by me before the next starts.
 - **Fold back when done.** What was learned goes into the living docs and decision notes, so
   the design file can stay a frozen record.
 
+### wayfinder: for efforts too big for one session
+
+Adapted from [Matt Pocock's wayfinder](https://github.com/mattpocock/skills). When an effort
+won't fit in one session and the route isn't clear, a long design chat degrades and loses
+track. Wayfinder splits the deciding into tickets on GitHub Issues instead: a map issue names
+the destination, child issues each hold one question, and each session resolves one.
+
+- **User-invoked only.** It's the heaviest flow here, so the agent never starts it on its own.
+- **It plans, it doesn't build.** The most reported failure of the original is the agent
+  building inside the map after writing "this map carries execution" into its own notes. Here
+  only the user, in chat, can allow that.
+- **GitHub's native sub-issues and blocking**, so the takeable tickets show in GitHub's UI
+  without opening the map.
+- **Bounded destinations and short questions.** Users of the original report maps going stale
+  halfway through and grilling questions too long to keep up with.
+- **The user picks prototypes.** The original let an agent choose between its own variants.
+- **Hands off to `design`.** Instead of Matt's to-spec and to-tickets, a cleared map feeds the
+  design skill, the same way a brainstorm brief does. Research and glossary terms follow the
+  global rules instead of separate skills.
+
 ### install.sh and AGENTS.md: one source for every agent
 
 `CLAUDE.md` is the only rules file; `AGENTS.md` is a symlink to it for agents that look for
@@ -183,4 +209,6 @@ short; detailed processes go in skills, which only load when needed.
 - **Living doc**: a doc that always describes the system as it is now.
 - **Record**: a dated doc (a design or a decision) that is never rewritten.
 - **Vertical slice**: a small piece of work that runs end to end through every layer it needs.
+- **Map**: wayfinder's index issue: destination, decisions so far, fog, out of scope.
+- **Fog**: questions you can tell are coming but can't phrase sharply yet.
 - **Arena**: several agents developing competing approaches independently, then a judge.
